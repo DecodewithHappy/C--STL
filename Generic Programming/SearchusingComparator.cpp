@@ -29,6 +29,17 @@ class Book{
     }
 };
 
+class BookCompare{
+
+    public:
+    bool operator()(Book A, Book B){
+        if(A.name==B.name){
+            return true;
+        }
+        return false;
+    }
+};
+
 int main(){
     Book b1("C++",100);//old edition
     Book b2("Python",120);
@@ -42,8 +53,14 @@ int main(){
     
     Book bookToFind("C++",110);//new edition
 
-    if(b1==bookToFind){ //cannot compare for this we need a comparator class
-        cout << "True" <<endl;
+    // if(b1==bookToFind){ //cannot compare for this we need a comparator class
+    //     cout << "True" <<endl;
+    // }
+
+    BookCompare cmp;  //cmp is a object
+    
+    if(cmp(b1,bookToFind)){
+        cout << "Same books!";
     }
 
     // auto it = search(l.begin(),l.end(),3);
