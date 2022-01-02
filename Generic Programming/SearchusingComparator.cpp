@@ -1,19 +1,7 @@
 #include <iostream>
 #include <list>
+#include <string.h>
 using namespace std;
-
-template<class ForwardIterator, class T> //forwarditerator depends upon the container used and T depends upon the data type used.
-
-ForwardIterator search(ForwardIterator start, ForwardIterator end, T key){
-    while(start != end){
-        if(*start == key){
-            return start;
-        }
-        start++;
-    }
-    return end;
-}
-
 class Book{
     public:
     string name;
@@ -40,6 +28,20 @@ class BookCompare{
     }
 };
 
+
+template<class ForwardIterator, class T, class Compare> //forwarditerator depends upon the container used and T depends upon the data type used,compare will compare 2 object
+
+ForwardIterator search(ForwardIterator start, ForwardIterator end, T key, Compare cmp){
+    while(start != end){
+        if(cmp(*start,key)){
+            return start;
+        }
+        start++;
+    }
+    return end;
+}
+
+
 int main(){
     Book b1("C++",100);//old edition
     Book b2("Python",120);
@@ -59,14 +61,12 @@ int main(){
 
     BookCompare cmp;  //cmp is a object
     
-    if(cmp(b1,bookToFind)){
-        cout << "Same books!";
-    }
 
-    // auto it = search(l.begin(),l.end(),3);
-    // if(it == l.end()){
-    //     cout << "element not present" << endl;
-    // }else{
-    //     cout << *it << endl;
-    // }
+
+    auto it = search(l.begin(),l.end(),bookToFind,cmp);
+    if(it != l.end()){
+        cout << "book found" << endl;
+    }else{
+        cout << "book not found" << endl;
+    }
 }
