@@ -29,9 +29,9 @@ class BookCompare{
 };
 
 
-template<class ForwardIterator, class T, class Compare> //forwarditerator depends upon the container used and T depends upon the data type used,compare will compare 2 object
+template<class ForwardIterator, class T, class BookCompare> //forwarditerator depends upon the container used and T depends upon the data type used,compare will compare 2 object
 
-ForwardIterator search(ForwardIterator start, ForwardIterator end, T key, Compare cmp){
+ForwardIterator search(ForwardIterator start, ForwardIterator end, T key, BookCompare cmp){
     while(start != end){
         if(cmp(*start,key)){
             return start;
