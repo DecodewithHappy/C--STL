@@ -9,6 +9,7 @@ int main(){
 
     //to search use the find() function
     int key;
+    cout << "Enter key" << endl;
     cin >> key;
     auto it = find(arr, arr + n, key); //it will return the address of the key
 
