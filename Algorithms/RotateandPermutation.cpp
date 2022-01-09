@@ -24,4 +24,14 @@ int main(){
         cout << v[i] << " ";
     }
 
+    //next permutation
+    vector<int> v1{4,6,7};
+    
+    next_permutation(v1.begin(), v1.end());
+    cout << endl;
+    for(int x : v1){
+        cout << x << " ";
+    }
+
+    return 0;
 }
