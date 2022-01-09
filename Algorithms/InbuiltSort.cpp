@@ -9,6 +9,20 @@ bool compare(int a, int b){
     return a > b;
 }
 
+// bubble sort
+void bubble_sort(int arr[], int n, bool (&cmp)(int a, int b)){
+
+    for(int i=1; i<= n-1; i++){
+        for(int j=0; j<= (n-i-1); j++){
+
+            if(cmp(arr[j], arr[j+1])){
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
+
+}
+
 int main(){
 
     int n, i;
@@ -20,7 +34,8 @@ int main(){
         cin >> arr[i];
     } 
     
-    sort(arr, arr+n, compare);
+    //sort(arr, arr+n, compare);
+    bubble_sort(arr, n, compare);
     cout << "After Sorting \n";
     for(i = 0; i < n; i++){
         cout << arr[i] << " ";
