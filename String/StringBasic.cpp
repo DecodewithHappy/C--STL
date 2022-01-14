@@ -22,4 +22,38 @@ int main()
     cout << s3 << endl;
     cout << s4 << endl;
     cout << s5 << endl;
+
+    if(s0.empty()){ //to check whether a string object is empty or not
+       cout<<"s0 is empty string"<<endl;
+    }
+
+    //append the string
+    s0.append("I am learning C++");
+    cout<<s0<<endl;
+    s0 += " and Python is ";
+    cout<<s0<<endl;
+
+    //how to clear a string
+    cout<<s0.length()<<endl;
+    s0.clear();
+    cout<<s0.length()<<endl;
+
+    //compare 2 string
+    s0 = "Apple";
+    s1 = "Mango";
+    cout << s1.compare(s0) << endl; //Returns an integer ==0 equal, > 0 or < 0
+
+    if(s1 > s0){
+        cout << "Mango is lexicographically greater than apple"<<endl;
+    }
+    
+    //remove a word from the string
+    string s = "I want to have apple juice";
+    int index = s.find("apple");
+    string word = "apple";
+    int len = word.length(); //calculate length of the word
+    cout<<s<< endl;
+    s.erase(index, len+1); // will delete the apple and an extra space from the string
+    cout<<s<<endl; 
+
 }
