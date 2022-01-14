@@ -23,37 +23,68 @@ int main()
     cout << s4 << endl;
     cout << s5 << endl;
 
-    if(s0.empty()){ //to check whether a string object is empty or not
-       cout<<"s0 is empty string"<<endl;
+    if (s0.empty())
+    { // to check whether a string object is empty or not
+        cout << "s0 is empty string" << endl;
     }
 
-    //append the string
+    // append the string
     s0.append("I am learning C++");
-    cout<<s0<<endl;
+    cout << s0 << endl;
     s0 += " and Python is ";
-    cout<<s0<<endl;
+    cout << s0 << endl;
 
-    //how to clear a string
-    cout<<s0.length()<<endl;
+    // how to clear a string
+    cout << s0.length() << endl;
     s0.clear();
-    cout<<s0.length()<<endl;
+    cout << s0.length() << endl;
 
-    //compare 2 string
+    // compare 2 string
     s0 = "Apple";
     s1 = "Mango";
-    cout << s1.compare(s0) << endl; //Returns an integer ==0 equal, > 0 or < 0
+    cout << s1.compare(s0) << endl; // Returns an integer ==0 equal, > 0 or < 0
 
-    if(s1 > s0){
-        cout << "Mango is lexicographically greater than apple"<<endl;
+    // Overloaded operators
+    if (s1 > s0)
+    {
+        cout << "Mango is lexicographically greater than apple" << endl;
     }
-    
-    //remove a word from the string
+
+    cout << s1[0] << endl;
+
+    // remove a word from the string
     string s = "I want to have apple juice";
     int index = s.find("apple");
     string word = "apple";
-    int len = word.length(); //calculate length of the word
-    cout<<s<< endl;
-    s.erase(index, len+1); // will delete the apple and an extra space from the string
-    cout<<s<<endl; 
+    int len = word.length(); // calculate length of the word
+    cout << s << endl;
+    s.erase(index, len + 1); // will delete the apple and an extra space from the string
+    cout << s << endl;
 
+    // Iterate over all the characters in the string
+    for (int i = 0; i < s1.length(); i++)
+    {
+        cout << s1[i] << ":";
+    }
+    cout << endl;
+
+    // Iterators
+    // one way
+    for (auto it = s1.begin(); it != s1.end(); it++)
+    {
+        cout << (*it) << ",";
+    }
+    cout << endl;
+
+    // otherway
+    for (string::iterator it = s1.begin(); it != s1.end(); it++)
+    {
+        cout << (*it) << ",";
+    }
+    cout << endl;
+
+    //For each loop 
+    for(char c:s1){
+        cout<<c<<".";
+    }
 }
