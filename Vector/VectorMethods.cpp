@@ -52,9 +52,21 @@ int main(){
     cout << d.back() << endl;
 
     //Reserve      
+    int n;
+    cin>>n;
+    vector<int> v;
+    //To avoid doubling, we will use reserve function
+    v.reserve(5);
 
+    for(int i=0;i<n;i++){
+        int no;
+        cin>>no;
+        v.push_back(no);
+        cout<<"Changing capacity "<<v.capacity()<<endl;
+    }
+    cout<<"Capacity "<<v.capacity()<<endl;
     //display results
-    for(int x: d){ 
+    for(int x: v){ 
         cout <<x<<",";
     }
 }
