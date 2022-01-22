@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-    Vector v;
+    Vector<int> v;
     
     v.push_back(71);
 
