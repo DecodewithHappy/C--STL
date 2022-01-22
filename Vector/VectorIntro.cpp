@@ -13,7 +13,8 @@ int main(){
 
     //to iterate over the vector
     for(int i=0; i<c.size(); i++){
-        cout << c[i] << ",";
+        //cout << c[i] << ",";
+        cout << c.at(i) << ",";
     }
     cout<<endl;
 
