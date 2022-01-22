@@ -56,6 +56,9 @@ int main(){
     cin>>n;
     vector<int> v;
     //To avoid doubling, we will use reserve function
+    //vectors dynamic the size will increase automatically when we will reach the limit
+    //the size gets doubled if it is 5 then it will become 10.
+    //if we dont use reserve then every time the capacity will increase and it is a costly operation.
     v.reserve(5);
 
     for(int i=0;i<n;i++){
