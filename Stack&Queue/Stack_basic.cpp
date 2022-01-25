@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
 
+    //major func: push,pop,top,empty.
     stack<int> s;
     int n;
     cout << "Enter the number of elements in the stack : ";
