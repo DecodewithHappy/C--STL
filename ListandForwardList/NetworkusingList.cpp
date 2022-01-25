@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-
+    void display(list<pair<int,int> > *l, int n);
     //Multiple lists pair wise
 
     //to create a single list pair<int,int>
@@ -30,9 +30,18 @@ int main(){
         l[v1].push_back(make_pair(v2,wt));
         l[v2].push_back(make_pair(v1,wt));
     }
-
-
+    display(l, n);
     return 0;
+}
 
-
+void display(list<pair<int,int> > *l, int n){
+    //it will run for the number of vertices.
+    for(int i=0; i<n; i++){
+        //print every list, its elements
+        cout << "Linked List " << i << "->"; 
+        for(auto xp: l[i]){
+            cout << "(" << xp.first << "," << xp.second << "),";
+        }
+        cout << endl;
+    }
 }
