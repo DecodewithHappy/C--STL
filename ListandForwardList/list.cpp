@@ -41,6 +41,31 @@ int main(){
     cout << "Final result : \n";
     display(l2);
     cout << endl;
+
+    //some more func in list 
+    l2.push_back("orange");
+    l2.push_back("bajra");
+    display(l2);
+    cout << endl;
+    //in list the values are not stored in linear memory so we cannot use index to extract values
+
+    //erase one or more elements from the list
+    auto it = l2.begin();
+    it++;
+    it++;
+
+    l2.erase(it);
+    display(l2);
+    cout << endl;
+
+    //we can insert elements in the list
+    it = l2.begin();
+    it++;
+    l2.insert(it, "FruitJuice");
+
+    display(l2);
+    cout << endl;
+
 }
 
 void display(list<string> l2){
